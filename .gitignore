@@ -3,3 +3,4 @@ node_modules/
 dependencies
 debug
 build
+src/js/access.coffee

@@ -1,0 +1,13 @@
+{
+  "manifest_version" : 2,
+  "name"             : "synchronizer",
+  "description"      : "",
+  "version"          : "0.0.1",
+  "permissions" : [
+  "https://drive.google.com/"
+  ],
+  "browser_action" : {
+    "default_icon"  : "logo.png",
+    "default_popup" : "index.html"
+  }
+}

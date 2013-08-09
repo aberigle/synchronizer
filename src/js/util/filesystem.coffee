@@ -5,7 +5,6 @@ window.requestFileSystem = window.requestFileSystem || window.webkitRequestFileS
 successCallback = (fs) ->
   reader = do fs.root.createReader
   entries = []
-
   readEntries = ->
     reader.readEntries ((results)->
       if not results.length
@@ -20,7 +19,6 @@ successCallback = (fs) ->
 
 onError = (event) ->
   console.log event
-
 
 errorHandler: (e)->
   msg = ''
@@ -41,4 +39,4 @@ errorHandler: (e)->
   alert msg
 
 
-window.requestFileSystem window.PERSISTENT, 20000, successCallback, onError
+window.requestFileSystem window.PERSISTENT, 24*1024*1024, successCallback, onError

@@ -20,6 +20,8 @@ module.exports = (grunt) ->
         "src/html/app.jade"]
       jade_files : [
         "src/html/*.jade"]
+      manifest: [
+        "src/manifest.json"]
 
     dependencies :
       js : []              
@@ -35,8 +37,11 @@ module.exports = (grunt) ->
     
     concat : 
       coffee : 
-        files:
+        files :
           ".tmp/coffee/tmp.coffee" : "<%=src.coffee%>"
+      manifest :
+        files : 
+          "build/manifest.json" : "<%=src.manifest%>"
 
     coffee:
       build:
@@ -70,6 +75,9 @@ module.exports = (grunt) ->
       jade : 
         files : ["<%=src.jade%>","<%=src.jade_files%>"]
         tasks : ["jade"]
+      manifest : 
+        files : ["<%=src.manifest%>"]
+        tasks : ["concat"]
 
 
   grunt.loadNpmTasks "grunt-contrib-coffee"
